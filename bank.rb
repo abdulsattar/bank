@@ -14,7 +14,7 @@ class BankAccount
   attr_reader :balance, :transactions
   def initialize(balance)
     @balance = balance
-    @transactions = []
+    @transactions = [Transaction.new(:credit, balance)]
 
     @semaphore = Mutex.new
   end
